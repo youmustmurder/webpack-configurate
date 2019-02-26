@@ -1,8 +1,13 @@
-Начальная конфигурация для webpack.
+# Начальная конфигурация для webpack.
 
-<p>Установленные плагины для Postcss:</p>
-<ul>
-<li><a href="https://github.com/postcss/autoprefixer" target="_blank">autoprefixer</a></li>
-<li><a href="https://github.com/luisrudge/postcss-flexbugs-fixes" target="_blank">postcss-flexbugs-fixes</a></li>
-<li><a href="https://github.com/jonathantneal/postcss-short" target="_blank">postcss-short</a></li>
-</ul>
+Установленные плагины для Postcss:
+
+* [autoprefixer](https://github.com/postcss/autoprefixer")
+* [postcss-flexbugs-fixes](https://github.com/luisrudge/postcss-flexbugs-fixes)
+* [postcss-short](https://github.com/jonathantneal/postcss-short)
+* [postcss-inline-svg](https://github.com/TrySound/postcss-inline-svg)
+* [PreCSS](https://github.com/jonathantneal/precss)
+
+Изменения:
+
+* Теперь вместо sass-loader используется PreCss

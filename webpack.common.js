@@ -64,6 +64,10 @@ module.exports = {
               ident: 'postcss',
               sourceMap: true,
               plugins: () => [
+                require('autoprefixer'),
+                require('postcss-short'),
+                require('postcss-flexbugs-fixes'),
+                require('postcss-inline-svg'),
                 require('cssnano')({
                   preset: ['default', {
                     discardComments: {
@@ -71,18 +75,10 @@ module.exports = {
                     },
                   }]
                 }),
-                require('autoprefixer'),
-                require('postcss-short'),
-                require('postcss-flexbugs-fixes')
+                require('precss')
               ]
             }
           },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true
-            }
-          }
         ]
       },
       {

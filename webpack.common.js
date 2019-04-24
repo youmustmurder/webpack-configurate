@@ -1,25 +1,24 @@
 const path = require('path'),
-    	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
+		MiniCssExtractPlugin = require("mini-css-extract-plugin"),
       	CopyWebpackPlugin = require('copy-webpack-plugin'),
       	HtmlWebpackPlugin = require('html-webpack-plugin'),
 		fs = require('fs'),
-		StyleLintPlugin = require('stylelint-webpack-plugin');
+		StyleLintPlugin = require('stylelint-webpack-plugin'),
+		htmlPlugins = generateHtmlPlugins('./src/html/views');
 
 function generateHtmlPlugins(templateDir) {
   	const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
   	return templateFiles.map(item => {
-		const parts = item.split('.');
-		const name = parts[0];
-		const extension = parts[1];
+		const parts = item.split('.'),
+				name = parts[0],
+				extension = parts[1];
 		return new HtmlWebpackPlugin({
 			filename: `${name}.html`,
 			template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
 			inject: false,
-		})
-  	})
+		});
+  	});
 }
-
-const htmlPlugins = generateHtmlPlugins('./src/html/views');
 
 module.exports = {
 	entry: [
